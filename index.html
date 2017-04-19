@@ -17,10 +17,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Geocacheing messaging app">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoMessenger</title>
-
-
-
+  <title>Troy Psychogeographic Library</title>
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
@@ -51,8 +48,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
   <link rel="stylesheet" href="css/main.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="leaflet.css" />
+	<script src="JavaScript/leaflet.js"></script>
   <script src="js/L.Control.Locate.js"></script>
   <link rel="stylesheet" href="css/L.Control.Locate.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -74,7 +71,7 @@
 
           <h3 class = "mdl-color-text--white">
             <i class="material-icons mdl-color-text--white">
-              chat_bubble_outline
+              <!--icon here -->
             </i>
             Troy Psychogeographic Library 
           </h3>
@@ -85,6 +82,50 @@
   <main class="mdl-layout__content mdl-color--grey-100">
 
     <div id="mapid" style="width: 100vw; height: 80vh;" ></div>
+    <script>
+
+  // initialize the map
+  var map = L.map('mapid').setView([42.753, -73.6814], 14);
+
+  // load a tile layer
+  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      maxZoom: 19,
+      minZoom: 9
+    }).addTo(map);
+
+  //list of coordinates
+  var markers = 
+  [{name:"sanctuary", lat:"42.75250000", lng:"-73.68138889"}, 
+  {name:"abandoned_building_wall", lat:"42.74611111", lng:"73.68388889"}, 
+  {name:"garbage_dump", lat:"42.74777778", lng:"73.68500000"}, 
+  {name:"tree_by_boat_launch", lat:"42.74694444", lng:"73.68500000"}, 
+  {name:"big_rock_where_teens_drink", lat:"42.74444444", lng:"73.68333333"} 
+  ];
+
+
+  var count;
+
+    var circle2 = L.circle([42.74611111, 73.68388888], {
+    color: 'orange',
+    fillColor: '#f03',
+    fillOpacity: 0.4,
+    radius: 25
+    }).addTo(map);
+
+  //create circular markers with coordinates
+  for(count = 0; count < markers.length; markers++){
+    var latitude = markers[count].lat;
+    var longitude = markers[count].lng;
+    var circle = L.circle([latitude, longitude], {
+      color: 'orange',
+      fillColor: '#f03',
+      fillOpacity: 0.4,
+      radius: 25
+      }).addTo(map);
+  }
+
+  </script>
 
   </main>
 

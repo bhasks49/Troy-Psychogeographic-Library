@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+  <!-- Header section containing logo -->
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-orange-700">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+      <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop ">
+
+          <h3 class = "mdl-color-text--white">
+            <i class="material-icons mdl-color-text--white">
+              <!-- icon here -->
+            </i>
+            Troy Psychogeographic Library 
+          </h3>
+
+      </div>
+    </div>
+  </header>
+  <main class="mdl-layout__content mdl-color--grey-100">
+
+<title>A simple map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id="map" style="width: 100vw; height: 80vh;" ></div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiYmhhc2tzIiwiYSI6ImNqMW55OXh0cTAxMHQyd21odDJlaHA5dTAifQ.ZWtv5qsXhRVQShpq2vZANQ';
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([40, -74.50], 9);
+</script>
+
+</main>
+
+ <footer class="mdl-layout__header mdl-color-text--white mdl-color--light-orange-700" id = "footer" >
+
+</footer>
+</body>
+</html>
