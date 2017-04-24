@@ -65,13 +65,13 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-orange-700">
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--deep-orange-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop ">
 
           <h3 class = "mdl-color-text--white">
             <i class="material-icons mdl-color-text--white">
-              <!--icon here -->
+            music_note
             </i>
             Troy Psychogeographic Library 
           </h3>
@@ -97,31 +97,25 @@
   //list of coordinates
   var markers = 
   [{name:"sanctuary", lat:"42.75250000", lng:"-73.68138889"}, 
-  {name:"abandoned_building_wall", lat:"42.74611111", lng:"73.68388889"}, 
-  {name:"garbage_dump", lat:"42.74777778", lng:"73.68500000"}, 
-  {name:"tree_by_boat_launch", lat:"42.74694444", lng:"73.68500000"}, 
-  {name:"big_rock_where_teens_drink", lat:"42.74444444", lng:"73.68333333"} 
+  {name:"abandoned_building_wall", lat:"42.74611111", lng:"-73.68388889"}, 
+  {name:"garbage_dump", lat:"42.74777778", lng:"-73.68500000"}, 
+  {name:"tree_by_boat_launch", lat:"42.74694444", lng:"-73.68500000"}, 
+  {name:"big_rock_where_teens_drink", lat:"42.74444444", lng:"-73.68333333"} 
   ];
 
 
   var count;
 
-    var circle2 = L.circle([42.74611111, 73.68388888], {
-    color: 'orange',
-    fillColor: '#f03',
-    fillOpacity: 0.4,
-    radius: 25
-    }).addTo(map);
-
   //create circular markers with coordinates
-  for(count = 0; count < markers.length; markers++){
-    var latitude = markers[count].lat;
+  for(count = 0; count < markers.length; count++){
+    var latitude = markers[count].lat; // + (Math.random *0.1)
     var longitude = markers[count].lng;
     var circle = L.circle([latitude, longitude], {
       color: 'orange',
       fillColor: '#f03',
       fillOpacity: 0.4,
-      radius: 25
+      radius: 25,
+      interactive: true
       }).addTo(map);
   }
 
@@ -129,7 +123,7 @@
 
   </main>
 
-  <footer class="mdl-layout__header mdl-color-text--white mdl-color--light-orange-700" id = "footer" >
+  <footer class="mdl-layout__header mdl-color-text--white mdl-color--deep-orange-700" id = "footer" >
 
 
   </footer>
