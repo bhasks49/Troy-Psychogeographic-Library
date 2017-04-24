@@ -96,11 +96,11 @@
 
   //list of coordinates
   var markers = 
-  [{name:"sanctuary", lat:"42.75250000", lng:"-73.68138889"}, 
-  {name:"abandoned_building_wall", lat:"42.74611111", lng:"-73.68388889"}, 
-  {name:"garbage_dump", lat:"42.74777778", lng:"-73.68500000"}, 
-  {name:"tree_by_boat_launch", lat:"42.74694444", lng:"-73.68500000"}, 
-  {name:"big_rock_where_teens_drink", lat:"42.74444444", lng:"-73.68333333"} 
+  [{name:"sanctuary", m:"[usb/lightning flash drive]\n Go to the bicycle fence. Listen to the sounds the fence makes. Do you hear the roosters in the garden?", lat:"42.75250000", lng:"-73.68138889"}, 
+  {name:"abandoned_building_wall", m:"[usb flash drive] Grab an object from the ground and run it down the wall. What do you see inside?", lat:"42.74611111", lng:"-73.68388889"}, 
+  {name:"garbage_dump", m: "[usb/lightning flash drive] Look at the sky. Look at the water.", lat:"42.74777778", lng:"-73.68500000"}, 
+  {name:"tree_by_boat_launch", m:"[usb/lightning flash drive] Do you see any bricks on the beach? The trees are drums.", lat:"42.74777778", lng:"-73.68527778"}, 
+  {name:"big_rock_where_teens_drink", m:"[usb flash drive] Listen to the wind. Your body is an instrument.", lat:"42.74444444", lng:"-73.68333333"} 
   ];
 
 
@@ -116,7 +116,7 @@
       fillOpacity: 0.4,
       radius: 25,
       interactive: true
-      }).addTo(map);
+      }).addTo(map).bindPopup(markers[count].m);
   }
 
   </script>
