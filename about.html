@@ -48,18 +48,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
   <link rel="stylesheet" href="css/main.css">
 
-  <link rel="stylesheet" href="leaflet.css" />
-	<script src="JavaScript/leaflet.js"></script>
-  <script src="js/L.Control.Locate.js"></script>
   <link rel="stylesheet" href="css/L.Control.Locate.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css" />
-
-  <script src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
 
 </head>
-
-
 
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -73,7 +65,7 @@
             <i class="material-icons mdl-color-text--white">
             music_note
             </i>
-            <a href="about.html" style="color:white">
+            <a href="index.html" style="color:white">
             Troy Psychogeographic Library 
             </a>
           </h3>
@@ -83,52 +75,22 @@
   </header>
   <main class="mdl-layout__content mdl-color--grey-100">
 
-    <div id="mapid" style="width: 100vw; height: 80vh;" ></div>
-    <script>
-
-  // initialize the map
-  var map = L.map('mapid').setView([42.753, -73.6814], 14);
-
-  // load a tile layer
-  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    {
-      maxZoom: 19,
-      minZoom: 9
-    }).addTo(map);
-
-  //list of coordinates
-  var markers = 
-  [{name:"sanctuary", m:"[usb/lightning flash drive]\n Go to the bicycle fence. Listen to the sounds the fence makes. Do you hear the roosters in the garden?", lat:"42.75250000", lng:"-73.68138889"}, 
-  {name:"abandoned_building_wall", m:"[usb flash drive] Grab an object from the ground and run it down the wall. What do you see inside?", lat:"42.74611111", lng:"-73.68388889"}, 
-  {name:"garbage_dump", m: "[usb/lightning flash drive] Look at the sky. Look at the water.", lat:"42.74777778", lng:"-73.68500000"}, 
-  {name:"tree_by_boat_launch", m:"[usb/lightning flash drive] Do you see any bricks on the beach? The trees are drums.", lat:"42.74777778", lng:"-73.68527778"}, 
-  {name:"big_rock_where_teens_drink", m:"[usb flash drive] Listen to the wind. Your body is an instrument.", lat:"42.74444444", lng:"-73.68333333"} 
-  ];
-
-
-  var count;
-
-  //create circular markers with coordinates
-  for(count = 0; count < markers.length; count++){
-    var latitude = markers[count].lat; // + (Math.random *0.1)
-    var longitude = markers[count].lng;
-    var circle = L.circle([latitude, longitude], {
-      color: 'orange',
-      fillColor: '#f03',
-      fillOpacity: 0.4,
-      radius: 25,
-      interactive: true
-      }).addTo(map).bindPopup(markers[count].m);
-  }
-
-  </script>
+<style>
+p.space{line-height: 1.4;}
+</style>
+<p><b>About</b></p>
+<p style="text-align:left; font-size:25px; margin-left:15em; margin-right:15em" class="space"> The Troy Psychogeographic Library (TPL) is an offline, hyperlocal, peer-to-peer
+file-sharing network in physical space facilitating the creation + distribution of sound art. The library is a neighborhood commons—a digital resource promoting the fluid, unfettered exchange of experimental media. The library, as the name suggests, is also a psychogeographic game encouraging individuals to deviate from their predictable paths in order to form new perspectives on urban space. The library is designed to be a flexible, inclusive platform that encourages artists, social geographers, and community members to use it in the ways they see fit.
+</p>
 
   </main>
 
-  <footer class="mdl-layout__header mdl-color-text--white mdl-color--deep-orange-700" id = "footer" >
 
 
-  </footer>
+ <footer class="mdl-layout__header mdl-color-text--white mdl-color--deep-orange-700" id = "footer" >
+
+</footer>
+
 </div>
  <script src="js/main.js"> </script>
 </body>
