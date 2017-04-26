@@ -119,6 +119,19 @@
       radius: 25,
       interactive: true
       }).addTo(map).bindPopup(markers[count].m);
+
+    //Display User's current location
+    map.locate({setView: true, maxZoom: 15});
+
+    function onLocationFound(e) {
+    var radius = e.accuracy / 2;
+
+    L.marker(e.latlng).addTo(map).bindPopup("You are here");
+    }
+
+map.on('locationfound', onLocationFound);
+
+
   }
 
   </script>
